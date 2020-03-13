@@ -4,13 +4,9 @@ import java.util.concurrent.TimeUnit;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -21,32 +17,7 @@ import com.zaxxer.hikari.HikariDataSource;
 @Configuration
 @EnableAutoConfiguration
 @EnableJpaRepositories
-//@EnableAutoConfiguration(
-//exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class JdbcConfiguration {
-
-//    //@Value("${spring.datasource.url:jdbc:postgresql://localhost:5432/postgres}")
-//	//@Value("#{systemProperties['spring.datasource.url'] ?: 'jdbc:postgresql://localhost:5432/postgres'}")
-//    @Value("${spring.datasource.url}")
-//    private String jdbcUrl;
-//
-//    //@Value("${spring.datasource.username:brainweb}")
-//	//@Value("#{systemProperties['spring.datasource.username'] ?: 'brainweb'}")
-//    @Value("${spring.datasource.username}")
-//    private String username;
-//
-//    //@Value("${spring.datasource.password:brainweb}")
-//	//@Value("#{systemProperties['spring.datasource.password'] ?: 'brainweb'}")
-//    @Value("${spring.datasource.password}")
-//    private String password;
-//
-//    //@Value("${spring.datasource.schema:interview_service}")
-//	//@Value("#{systemProperties['spring.datasource.schema'] ?: 'interview_service'}")
-//    @Value("${spring.datasource.schema}")
-//    private String schema;
-//
-//    //@Autowired
-//    //private Environment env;
     
     @Bean
     public DataSource dataSource() {
