@@ -1,0 +1,27 @@
+version: '2'
+services:
+
+  pleno-postgres:
+    image: "postgres:9.6-alpine"
+    container_name: pleno-postgres
+    volumes:
+      - pleno-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=heros
+      - POSTGRES_USER=brainweb
+      - POSTGRES_PASSWORD=brainweb
+
+  interview-pleno:
+    build: ./core/src/main/docker
+    container_name: core
+    environment:
+      - DB_SERVER=pleno-postgres
+    ports:
+      - 8080:8080
+    links:
+      - pleno-postgres
+
+volumes:
+  pleno-data:
