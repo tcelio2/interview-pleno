@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import br.com.brainweb.interview.core.repository.HeroRepository;
@@ -35,7 +36,7 @@ public class HeroService {
 	@Autowired
 	private PowerStatsRepository powerStatsRepository;
 
-
+	@Cacheable("heros")
 	public List<Hero> trazerTodosHerois() {
 		log.info("Iniciando processo para trazer todos os herois.");
 		return heroRepository.findAll();
@@ -105,6 +106,7 @@ public class HeroService {
 		return null;
 	}
 
+	@Cacheable("herosName")
 	public List<Hero> buscarPorNomeHero(String nome) {
 		return heroRepository.findByName(nome);
 	}

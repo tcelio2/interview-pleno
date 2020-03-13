@@ -1,4 +1,4 @@
-package br.com.brainweb.interview.core.features.hero;
+package br.com.brainweb.interview.core.service;
 
 import org.springframework.test.context.ActiveProfiles;
 

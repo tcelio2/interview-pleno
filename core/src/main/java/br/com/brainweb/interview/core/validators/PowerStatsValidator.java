@@ -10,9 +10,6 @@ import br.com.brainweb.interview.model.PowerStats;
 @Component
 public class PowerStatsValidator {
 
-	//@Autowired
-	//private ValidatorService validatorService;//strength agility dexteriry intelligence
-
 	public ErrorMsg isValid(PowerStats power) {
 		ErrorMsg msg = null;
 
