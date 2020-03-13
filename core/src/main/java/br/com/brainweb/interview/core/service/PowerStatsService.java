@@ -1,4 +1,4 @@
-package br.com.brainweb.interview.core.features.powerstats;
+package br.com.brainweb.interview.core.service;
 
 public class PowerStatsService {
 }
